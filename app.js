@@ -44,7 +44,7 @@ app.post('/bot', function(req, res) {
 
 		bot.addListener("message", function(from, to, text, message) {
 			console.log('new message');
-			if(text == req.body.targetString && contestants.indexOf(message.nick) == -1) {
+			if(text.toUpperCase() == req.body.targetString.toUpperCase() && contestants.indexOf(message.nick) == -1) {
 					console.log('added');
 					contestants.push(message.nick);
 			}
