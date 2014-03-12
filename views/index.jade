@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  div.top
+
+  div.container
+    form.form-horizontal(id='lookup-form', method="POST")
+      .form-group
+        label.col-sm-3.control-label(for='server') IRC Server
+        .col-sm-7
+          input.form-control(type='text', name='server', id='server')
+      .form-group
+        label.col-sm-3.control-label(for='channel') IRC Channel
+        .col-sm-7
+          input.form-control(type='text', name='channel', id='channel')
+      .form-group
+        label.col-sm-3.control-label(for='name') Bot Name
+        .col-sm-7
+          input.form-control(type='text', name='name', id='name')
+      .form-group
+        label.col-sm-3.control-label(for='name') String to check for
+        .col-sm-7
+          input.form-control(type='text', name='targetString', id='targetString')
+      if started
+        .form-group
+          .col-sm-7
+            button.btn.btn-danger(type='submit', id="button")
+              i.fa.fa-check
+              | Stop
+      else
+        .form-group
+          .col-sm-7
+            button.btn.btn-success(type='submit', id="button")
+              i.fa.fa-check
+              | Start
+
+  div.footer
+    script(src="/js/bot.js")
