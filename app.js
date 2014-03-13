@@ -33,9 +33,9 @@ app.post('/bot', function(req, res) {
 		bot = {};
 		app.locals.started = false;
 
-		res.send({selected: getRandomUser()});
+		res.send({selected: getRandomUser(), first: contestants[0]});
 
-		conntestants = [];
+		contestants = [];
 	} else {
 		res.send(200);
 		bot = new irc.Client(req.body.server, req.body.name,{

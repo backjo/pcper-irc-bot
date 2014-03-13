@@ -15,7 +15,7 @@ $("#lookup-form").submit(function( event ) {
     complete: function(retData) {
       console.log(retData);
       if(retData && retData.responseJSON && retData.responseJSON.selected) {
-        alert("Selected: " + retData.responseJSON.selected);
+        alert("Selected: " + retData.responseJSON.selected + '\nFirst:' + retData.responseJSON.first);
         $('#button').text("Start");
         $('#button').addClass('btn-success');
         $('#button').removeClass('btn-danger');
